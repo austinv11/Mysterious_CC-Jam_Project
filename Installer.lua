@@ -2,7 +2,7 @@ local ver = "0.1"
 
 local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world", ".minecraft"}
 
-local progs = {".minecraft/assets/mojang", "minecraft")
+local progs = {".minecraft/assets/mojang", "minecraft", ".minecraft/start")
 	
 local function gitGet(path, toPath)
         local dl = http.get("https://raw.github.com/austinv11/Mysterious_CC-Jam_Project/master/"..path)
@@ -46,6 +46,7 @@ local function prepInstall()
 local function download()
 	gitGet("assets/mojang.lua", ".minecraft/assets/mojang")
 	gitGet("minecraft.lua", "minecraft")
+	gitGet("start.lua", ".minecraft/start")
 	end
 	
 local function setScreen()

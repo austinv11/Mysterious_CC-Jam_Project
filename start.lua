@@ -1,10 +1,10 @@
-os.loadAPI(".minecraft/apis/mc")
-os.loadAPI(".minecraft/blockData/blocks")
-os.loadAPI(".minecraft/blockData/background")
-os.loadAPI(".minecraft/blockData/tiles")
+os.loadAPI(",minecraft/apis/mc")
+os.loadAPI(",minecraft/blockData/blocks")
+os.loadAPI(",minecraft/blockData/background")
+os.loadAPI(",minecraft/blockData/tiles")
 
 local function loadingScreen()
-	local r = fs.open(".minecraft/assets/mojang")
+	local r = fs.open(",minecraft/assets/mojang")
 	local mj = {}
 	mj = r.readAll()
 	r.close()
@@ -27,7 +27,7 @@ mc.log(" ")
 mc.log("Checking for mods...", "STDDER", "MINECRAFT-MODLOADER")
 
 local table = {}
-table = fs.list(".minecraft/mods")
+table = fs.list(",minecraft/mods")
 local x = 0
 for name, data in pairs(table) do
 	x = x + 1
@@ -46,14 +46,14 @@ if x ~= 0 then
 
 mc.log("Looking for configs...", "STDDER")
 local table = {}
-table = fs.list(".minecraft/configs")
+table = fs.list(",minecraft/configs")
 local x = 0
 for name, data in pairs(table) do
 	x = x + 1
 	end
 mc.log("Found "..x.." configs! Loading them...", "SEVERE")
 for name, data in pairs(table) do
-	os.loadAPI(".minecraft/configs/"..data)
+	os.loadAPI(",minecraft/configs/"..data)
 	mc.log("Loaded "..data, "STDDER")
 	end
 mc.log("Finished loading "..x.." configs!")

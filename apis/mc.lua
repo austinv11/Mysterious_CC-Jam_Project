@@ -2,7 +2,7 @@ version = "0.1"
 
 function createLog()
 	local time = os.time()
-	local w = fs.open(".minecraft/logs/minecraft-log", "w")
+	local w = fs.open(",minecraft/logs/minecraft-log", "w")
 	w.writeLine("[MINECRAFT]["..time.."][NORMAL]")
 	w.close()
 	end
@@ -15,7 +15,7 @@ function log(event, tag, tagname)
 	if tagname == nil then
 		tagname = "MINECRAFT"
 		end
-	local w = fs.open(".minecraft/logs/minecraft-log", "a")
+	local w = fs.open(",minecraft/logs/minecraft-log", "a")
 	w.writeLine("["..tagname.."]["..time.."]["..tag.."] "..event)
 	w.close()
 	end

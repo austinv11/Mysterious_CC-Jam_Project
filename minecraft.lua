@@ -31,6 +31,8 @@ local function genWorld()
 		seed = tonumber(seed)
 		mc.log("done", "NORMAL", "MINECRAFT-WORLDGEN")
 		end
+	mc.log("generating...", "SEVERE", "MINECRAFT-WORLDGEN")
+	shell.run(",minecraft/worldgen", name, seed)
 	end
 
 local function loadWorld(world)

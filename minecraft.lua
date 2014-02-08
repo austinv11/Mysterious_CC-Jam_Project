@@ -63,7 +63,7 @@ local function loadWorld(world)
 			ax = ax + 1
 			axx = tostring(ax)
 			ayy = tostring(ay)
-			local r = fs.open(axx..","..ayy, "r")
+			local r = fs.open(",minecraft/world/"..name.."/"..axx..","..ayy, "r")
 			local k = r.readAll()
 			r.close()
 			k = tonumber(k)

@@ -30,21 +30,89 @@ local function play()
 		w = w + 1
 		end
 	mc.log(w.." worlds found! Listing...")
-	for name, data in pairs(check) do
-		mc.center(data)
-		end
 	mc.center("New World")
+	local pos = 0
+	w2 = 0
 	while true do
-		local _, mButt, x, y = os.pullEvent("mouse_click")
-		if y > 2 and y < (w + 4) and mButt == 1 then
-			if y == (w + 4) then
-				mc.log("Preparing new world...", "STDDER")
-				shell.run("minecraft", "New World")
+		mc.log("Drawing menu...")
+		header()
+		if pos == 0 then
+			for name, data in pairs(check) do
+				mc.center(" "..data.." ")
+				mc.center(" ")
+				end
+			mc.center(" New World ")
+		elseif pos <= w then
+			for name, data in pairs(check) do
+				w2 = w2 + 1
+				if w2 == pos then
+					mc.center("["..data.."]")
+				else
+					mc.center(" "..data.." ")
+					end
+				mc.center(" ")
+				end
+			mc.center(" New World ")
+		elseif pos > w then
+			for name, data in pairs(check) do
+				mc.center(" "..data.." ")
+				mc.center(" ")
+				end
+			mc.center("[New World]")
+			end
+		key = internal2()
+		--local mousef = internal1()
+		--local keyf = internal2()
+		--parallel.waitForAny(mousef, keyf)
+		--[[if mButton == 1 then
+			if y == 6 then
+				term.setCursorPos(1, 6)
+				term.setTextColor(colors.red)
+				mc.center("Play")
+				term.setTextColor(colors.white)
+				mc.log("playing..", "STDDER")
+				play()
 				break
-			else
-				local it = y - 1
-				mc.log("Preparing "..check[it], "STDDER")
-				shell.run("minecraft", check[it])
+			elseif y == 9 then
+				term.setCursorPos(1, 9)
+				term.setTextColor(colors.red)
+				mc.center("Settings")
+				term.setTextColor(colors.white)
+				mc.log("editing configs...", "STDDER")
+				settings()
+			elseif y == 12 then
+				term.setCursorPos(1, 12)
+				term.setTextColor(colors.red)
+				mc.center("Quit")
+				term.setTextColor(colors.white)
+				mc.log("quitting...", "STDDER")
+				quit()
+				break
+				end
+		else ]]--
+			if key == 200 then
+				if pos == 1 or pos == 0 then
+					pos = w + 1
+				else
+					pos = pos - 1
+					end
+			elseif key == 208 then
+				if pos == (w + 1) or pos == 0 then
+					pos = 1
+				else
+					pos = pos + 1
+					end
+			elseif key == 28 then
+				if pos > w then
+					mc.log("Preparing new world...", "STDDER")
+					shell.run("minecraft", "New World")
+					break
+				else
+					mc.log("Preparing "..check[pos], "STDDER")
+					shell.run("minecraft", check[pos])
+					break
+					end
+					--end
 				end
 			end
 		end

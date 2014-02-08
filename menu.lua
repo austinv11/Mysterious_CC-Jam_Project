@@ -45,7 +45,6 @@ local function play()
 	w2 = 0
 	while true do
 		mc.log("Drawing menu...")
-		header()
 		if pos == 0 then
 			for name, data in pairs(check) do
 				mc.center(" "..data.." ")

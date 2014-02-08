@@ -2,8 +2,8 @@ local ver = "0.1"
 
 local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world", ".minecraft"}
 
-local progs = {".minecraft/assets/mojang", "minecraft", ".minecraft/start")
-	
+local progs = {".minecraft/assets/mojang", "minecraft", ".minecraft/start", ".minecraft/apis/mc", ".minecraft/blockData/blocks", ".minecraft/blockData/background", ".minecraft/blockData/tiles", ".minecraft/menu", ".minecraft/worldgen")
+
 local function gitGet(path, toPath)
         local dl = http.get("https://raw.github.com/austinv11/Mysterious_CC-Jam_Project/master/"..path)
         if dl then
@@ -47,6 +47,12 @@ local function download()
 	gitGet("assets/mojang.lua", ".minecraft/assets/mojang")
 	gitGet("minecraft.lua", "minecraft")
 	gitGet("start.lua", ".minecraft/start")
+	gitGet("apis/mc.lua", ".minecraft/apis/mc")
+	gitGet("blockData/blocks.lua", ".minecraft/blockData/blocks")
+	gitGet("blockData/background.lua", ".minecraft/blockData/background")
+	gitGet("blockData/tiles.lua", ".minecraft/blockData/tiles")
+	gitGet("menu.lua", ".minecraft/menu")
+	gitGet("worldgen.lua", ".minecraft/worldgen")
 	end
 	
 local function setScreen()

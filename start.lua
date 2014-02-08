@@ -10,7 +10,7 @@ local function loadingScreen()
 	term.setTextColor(colors.orange)
 	term.clear()
 	term.setCursorPos(1,2)
-	term.write(mj)
+	print(mj)
 	term.setTextColor(colors.white)
 	end
 

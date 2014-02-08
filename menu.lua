@@ -35,7 +35,7 @@ local function internal2()
 local function selection()
 	local pos = 0
 	while true do
-		mc.log("Drawing header...")
+		mc.log("Drawing menu...")
 		header()
 		if pos == 0 then
 			mc.center("Play")

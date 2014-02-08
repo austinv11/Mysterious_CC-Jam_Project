@@ -38,6 +38,38 @@ local function genWorld()
 local function loadWorld(world)
 	mc.log("Loading "..tArgs[1], "SEVERE")
 	mc.hook("loading world")
+	term.clear()
+	term.setBackgroundColor(colors.brown)
+	local a, s = term.getSize()
+	for i = 1, s do
+		local n, m = term.getCursorPos()
+		m = m + 1
+		for o = 1, a do
+			term.write(" ")
+			end
+		term.setCursorPos(1, m)
+		end
+	term.setCursorPos(1, 8)
+	mc.center("Loading World")
+	term.setBackgroundColor(colors.white)
+	ax = 0
+	ay = 0
+	for i = 1, s do
+		ay = ay + 1
+		local n, m = term.getCursorPos()
+		m = m + 1
+		for o = 1, a do
+			ax = ax + 1
+			local r = fs.open(ax..","..ay)
+			local k = r.readAll()
+			r.close()
+			k = tonumber(k)
+			term.setBackgroundColor(k)
+			term.write(" ")
+			end
+		ax = 0
+		term.setCursorPos(1, m)
+		end
 	end
 
 if tArgs[1] == "New_World" then

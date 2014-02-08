@@ -20,6 +20,20 @@ local function internal2()
 	return keycode
 	end
 	
+local function heading2()
+	term.clear()
+	term.setCursorPos(1,1)
+	term.setTextColor(colors.lime)
+	mc.center("Worlds")
+	term.setTextColor(colors.yellow)
+	local q, w = term.getSize()
+	for l = 1, q do
+		term.write("~")
+		end
+	term.setTextColor(colors.white)
+	term.setCursorPos(1, 4)
+	end
+	
 local function play()
 	term.clear()
 	term.setCursorPos(1,1)
@@ -40,18 +54,19 @@ local function play()
 		w = w + 1
 		end
 	mc.log(w.." worlds found! Listing...")
-	mc.center("New World")
 	local pos = 0
 	w2 = 0
 	while true do
 		mc.log("Drawing menu...")
 		if pos == 0 then
+			heading2()
 			for name, data in pairs(check) do
 				mc.center(" "..data.." ")
 				mc.center(" ")
 				end
 			mc.center(" New World ")
 		elseif pos <= w then
+			heading2()
 			for name, data in pairs(check) do
 				w2 = w2 + 1
 				if w2 == pos then
@@ -63,6 +78,7 @@ local function play()
 				end
 			mc.center(" New World ")
 		elseif pos > w then
+			heading2()
 			for name, data in pairs(check) do
 				mc.center(" "..data.." ")
 				mc.center(" ")

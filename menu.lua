@@ -10,6 +10,16 @@ local function header()
 	term.setCursorPos(1, 6)
 	end
 	
+local function internal1()
+	_, mButton, x, y = os.pullEvent("mouse_click")
+	return mButton, x, y
+	end
+	
+local function internal2()
+	_, keycode = os.pullEvent("key")
+	return keycode
+	end
+	
 local function play()
 	term.clear()
 	term.setCursorPos(1,1)
@@ -125,16 +135,6 @@ local function settings()
 local function quit()
 	mc.log("Shutting down...", "SEVERE")
 	os.reboot()
-	end
-	
-local function internal1()
-	_, mButton, x, y = os.pullEvent("mouse_click")
-	return mButton, x, y
-	end
-	
-local function internal2()
-	_, keycode = os.pullEvent("key")
-	return keycode
 	end
 	
 local function selection()

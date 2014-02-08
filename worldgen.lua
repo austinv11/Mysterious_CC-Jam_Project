@@ -25,7 +25,9 @@ blockids = {
 "tiles.netherPortal",
 "tiles.bedrock",
 "tiles.water",
-"tiles.lava"
+"tiles.lava",
+"tiles.playerHead",
+"tiles.playerBottom"
 }
 
 local function convertBlock(blk)

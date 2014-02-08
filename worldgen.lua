@@ -2,24 +2,31 @@ tArgs = {...} --tArgs[1] == name tArgs[2] == seed
 
 --Block id table set
 blockids = {
-sun = 1,
-cloud = 2,
-sky = 3,
-nightSky = 4,
-moon = 5,
-grass = 6,
-dirt = 7,
-stone = 8,
-obsidian = 9,
-netherrack = 10,
-netherPortal = 11,
-bedrock = 12,
-water = 13,
-lava = 14,
+"background.sun",
+"background.cloud",
+"background.sky",
+"background.nightSky",
+"background.moon",
+"blocks.grass",
+"blocks.dirt",
+"blocks.stone",
+"blocks.obsidian",
+"blocks.netherrack",
+"tiles.netherPortal",
+"tiles.bedrock",
+"tiles.water",
+"tiles.lava",
 }
 
 local function convertBlock(blk)
-	
+	local z = 1
+	for name, data in pairs(blockids) do
+		if z == blk then
+			return data
+			break
+			end
+		z = z + 1
+		end
 	end
 
 mc.log("dir made", "NORMAL", "MINECRAFT-WORLDGEN")

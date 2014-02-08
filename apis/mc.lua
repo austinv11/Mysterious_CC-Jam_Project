@@ -38,3 +38,39 @@ function hook(event)
 			end
 		end
 	end
+	
+function convertColor(blockString)
+	if blockString == "background.sun" then
+		return background.sun
+	elseif blockString == "background.cloud" then
+		return background.cloud
+	elseif blockString == "background.sky" then
+		return background.sky
+	elseif blockString == "background.nightSky" then
+		return background.nightSky
+	elseif blockString == "background.moon" then
+		return background.moon
+	elseif blockString == "blocks.grass" then
+		return blocks.grass
+	elseif blockString == "blocks.dirt" then
+		return blocks.dirt
+	elseif blockString == "blocks.stone" then
+		return blocks.stone
+	elseif blockString == "blocks.obsidian" then
+		return blocks.obsidian
+	elseif blockString == "blocks.netherrack" then
+		return blocks.netherrack
+	elseif blockString == "tiles.netherPortal" then
+		return tiles.netherPortal
+	elseif blockString == "tiles.bedrock" then
+		return tiles.bedrock
+	elseif blockString == "tiles.water" then
+		return tiles.water
+	elseif blockString == "tiles.lava" then
+		return tiles.lava
+	elseif blockString == "tiles.playerHead" then
+		return tiles.playerHead
+	elseif blockString == "tiles.playerBottom" then
+		return tiles.playerBottom
+		end
+	end

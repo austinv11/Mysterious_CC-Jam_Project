@@ -66,9 +66,8 @@ local function loadWorld(world)
 			local r = fs.open(",minecraft/world/"..name.."/"..axx..","..ayy, "r")
 			local k = r.readAll()
 			r.close()
-			print(k)
-			k = tonumber(k)
-			term.setBackgroundColor(k)
+			local coloring = mc.convertColor(k)
+			term.setBackgroundColor(coloring)
 			term.write(" ")
 			end
 		ax = 0

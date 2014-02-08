@@ -36,8 +36,8 @@ local function play()
 	mc.center("New World")
 	while true do
 		local _, mButt, x, y = os.pullEvent("mouse_click")
-		if y > 2 and y < (w + 3) and mButt == 1 then
-			if y == (w + 3) then
+		if y > 2 and y < (w + 4) and mButt == 1 then
+			if y == (w + 4) then
 				mc.log("Preparing new world...", "STDDER")
 				shell.run("minecraft", "New World")
 				break

@@ -1,6 +1,6 @@
 local ver = "0.1"
 
-local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world", ".minecraft"}
+local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world", ",minecraft"}
 
 local progs = {",minecraft/assets/mojang", "minecraft", ",minecraft/start", ",minecraft/apis/mc", ",minecraft/blockData/blocks", ",minecraft/blockData/background", ",minecraft/blockData/tiles", ",minecraft/menu", ",minecraft/worldgen"}
 

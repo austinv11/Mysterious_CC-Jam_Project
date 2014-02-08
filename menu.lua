@@ -11,7 +11,35 @@ local function header()
 	end
 	
 local function play()
-
+	term.clear()
+	term.setCursorPos(1,1)
+	mc.center("Worlds")
+	term.setCursorPos(1, 3)
+	mc.log("Getting worlds...", "STDDER")
+	local check = {}
+	check = fs.list(",minecraft/world")
+	local w = 0
+	for name, data in pairs(check) do
+		w = w + 1
+		end
+	mc.log(w.." worlds found! Listing...")
+	for name, data in pairs(check) do
+		mc.center(data)
+		end
+	mc.center("New World")
+	while true do
+		local _, mButt, x, y = os.pullEvent("mouse_click")
+		if y > 2 and y < (w + 3) and mButt == 1 then
+			if y == (w + 3) then
+				mc.log("Preparing new world...", "STDDER")
+				shell.run("minecraft", "New World")
+				break
+			else
+				mc.log("Preparing "..check[(y - 2)], "STDDER")
+				shell.run("minecraft", check[y - 2)])
+				end
+			end
+		end
 	end
 	
 local function settings()

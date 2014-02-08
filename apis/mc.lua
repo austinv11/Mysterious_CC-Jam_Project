@@ -19,3 +19,12 @@ function log(event, tagname, tag)
 	w.writeLine("["..tagname.."]["..time.."]["..tag.."] "..event)
 	w.close()
 	end
+	
+function center(text)
+  local x, y = term.getSize()
+  local x2, y2 = term.getCursorPos()
+    term.setCursorPos(math.ceil((x / 2) - (text:len() / 2)), y2)
+    term.write(text)
+    y2 = y2 + 1
+    term.setCursorPos(1, y2)
+  end

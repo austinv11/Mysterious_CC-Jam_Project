@@ -7,7 +7,7 @@ function createLog()
 	w.close()
 	end
 	
-function log(event, tagname, tag)
+function log(event, tag, tagname)
 	local time = os.time()
 	if tag == nil then
 		tag = "NORMAL"

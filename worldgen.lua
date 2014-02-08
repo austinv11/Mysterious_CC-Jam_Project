@@ -35,7 +35,6 @@ local function convertBlock(blk)
 	for name, data in pairs(blockids) do
 		if z == blk then
 			return data
-			break
 			end
 		z = z + 1
 		end

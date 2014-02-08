@@ -32,7 +32,9 @@ function center(text)
 function hook(event)
 	local tble = {}
 	tble = fs.list(",minecraft/mods")
-	for name, data in pairs do
-		shell.run(",minecraft/mods/"..data.." "..event)
+	if tble then
+		for name, data in pairs do
+			shell.run(",minecraft/mods/"..data.." "..event)
+			end
 		end
 	end

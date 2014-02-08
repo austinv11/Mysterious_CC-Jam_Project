@@ -67,6 +67,7 @@ local function loadWorld(world)
 			local k = r.readAll()
 			r.close()
 			k = tonumber(k)
+			print(k)
 			term.setBackgroundColor(k)
 			term.write(" ")
 			end

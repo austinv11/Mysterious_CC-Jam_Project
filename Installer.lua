@@ -1,6 +1,6 @@
 local ver = "0.1"
 
-local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world", ",minecraft"}
+local dirs = {",minecraft", ",minecraft/apis", ",minecraft/assets", ",minecraft/blockData", ",minecraft/configs", ",minecraft/logs", ",minecraft/mods", ",minecraft/world"}
 
 local progs = {",minecraft/assets/mojang", "minecraft", ",minecraft/start", ",minecraft/apis/mc", ",minecraft/blockData/blocks", ",minecraft/blockData/background", ",minecraft/blockData/tiles", ",minecraft/menu", ",minecraft/worldgen"}
 
@@ -14,8 +14,6 @@ local function gitGet(path, toPath)
                                 w.write(file)
                                 w.close()
                                 return true
-                        else
-                                w.close()
                                 end
         else
                 term.setTextColor(colors.red)

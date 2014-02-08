@@ -1,6 +1,6 @@
 local ver = "0.1"
 
-local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world")
+local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world"}
 	
 local function gitGet(path, toPath)
         local dl = http.get("https://raw.github.com/austinv11/Mysterious_CC-Jam_Project/master/"..path)
@@ -38,7 +38,7 @@ local function prepInstall()
 	end
         
 local function download()
-	gitG
+	gitGet("assets/mojang.lua", "assets/mojang")
 	end
 	
 local function setScreen()
@@ -49,12 +49,15 @@ local function setScreen()
 		print("MCCCMC-Installer Version "..ver)
 		term.setTextColor(colors.white)
 		print("Are you sure you want to install this? (Y/N")
-		print("*You won't regret it ;)")
+		print("*You won't regret it ;)*")
 		local input = read()
 		input = string.lower(input)
 		if input == "y" then
 			prepInstall()
 			download()
+			print("Restarting!")
+			sleep(0.25)
+			os.reboot()
 			break
 		elseif input == "n" then
 			break

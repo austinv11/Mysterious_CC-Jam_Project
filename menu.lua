@@ -167,7 +167,7 @@ local function selection()
 					mc.log("quitting...", "STDDER")
 					quit()
 					break
-					end
+					--end
 				end
 			end
 		end

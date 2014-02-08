@@ -101,10 +101,10 @@ local function selection()
 			print(" ")
 			mc.center("[Quit]")
 			end
-		local mousef = internal1()
-		local keyf = internal2()
-		parallel.waitForAny(mousef, keyf)
-		if mButton == 1 then
+		--local mousef = internal1()
+		--local keyf = internal2()
+		--parallel.waitForAny(mousef, keyf)
+		--[[if mButton == 1 then
 			if y == 6 then
 				term.setCursorPos(1, 6)
 				term.setTextColor(colors.red)
@@ -129,7 +129,7 @@ local function selection()
 				quit()
 				break
 				end
-		else
+		else ]]--
 			if key == 200 then
 				if pos == 1 or pos == 0 then
 					pos = 3

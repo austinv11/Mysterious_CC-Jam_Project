@@ -15,11 +15,12 @@ local function play()
 	end
 	
 local function settings()
-
+	shell.run("edit ,minecraft/configs/minecraft.cfg")
 	end
 	
 local function quit()
-	
+	mc.log("Shutting down...", "SEVERE")
+	os.reboot()
 	end
 	
 local function internal1()
@@ -89,7 +90,6 @@ local function selection()
 				term.setTextColor(colors.white)
 				mc.log("editing configs...", "STDDER")
 				settings()
-				break
 			elseif y == 12 then
 				term.setCursorPos(1, 12)
 				term.setTextColor(colors.red)

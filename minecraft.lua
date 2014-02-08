@@ -53,6 +53,8 @@ local function loadWorld(world)
 	term.setCursorPos(1, 8)
 	mc.center("Loading World")
 	term.setBackgroundColor(colors.white)
+	term.clear()
+	term.setCursorPos(1,1)
 	ax = 0
 	ay = 0
 	for i = 1, s do

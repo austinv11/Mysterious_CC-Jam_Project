@@ -33,6 +33,10 @@ local function center(text)
   
 local function prepInstall()
 	for name, data in pairs(dirs) do
+		local check = fs.exists(data)
+		if check == true then
+			fs.delete(data)
+			end
 		fs.makeDir(data)
 		end
 	end
@@ -48,7 +52,7 @@ local function setScreen()
 		term.setTextColor(colors.yellow)
 		print("MCCCMC-Installer Version "..ver)
 		term.setTextColor(colors.white)
-		print("Are you sure you want to install this? (Y/N")
+		print("Are you sure you want to install this? (Y/N)")
 		print("*You won't regret it ;)*")
 		local input = read()
 		input = string.lower(input)

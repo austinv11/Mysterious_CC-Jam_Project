@@ -1,5 +1,15 @@
 tArgs = {...} --tArgs[1] == name tArgs[2] == seed
 
+--[[World Gen depth map
+1-3; background.sun
+1-7; background.cloud, background.sky, background.nightSky, background.moon
+8-10; blocks.grass
+9-15; blocks.dirt
+9-18; blocks.stone
+19; tiles.bedrock
+
+]]--
+
 --Block id table set
 blockids = {
 "background.sun",
@@ -15,7 +25,7 @@ blockids = {
 "tiles.netherPortal",
 "tiles.bedrock",
 "tiles.water",
-"tiles.lava",
+"tiles.lava"
 }
 
 local function convertBlock(blk)
@@ -29,6 +39,15 @@ local function convertBlock(blk)
 		end
 	end
 
+local function docGen(blllck)
+	posx = tostring(x)
+	posy = tostring(y)
+	local w = fs.open(",minecraft/world/"..tArgs[1].."/"..posx..","..posy, "w")
+	local aBlock = convertBlock(blllck)
+	w.write(aBlock)
+	w.close()
+	end
+	
 mc.log("dir made", "NORMAL", "MINECRAFT-WORLDGEN")
 fs.makeDir(",minecraft/world/"..tArgs[1])
 
@@ -40,15 +59,33 @@ mc.log("seed = "..seed, "NORMAL", "MINECRAFT-WORLDGEN")
 
 for i = 1, y2 do
 	y = y + 1
+	x = 0
+	mc.log("y = "..y, "STDDER", "MINECRAFT-WORLDGEN")
 	for f = 1, x2 do
 		x = x + 1
+		mc.log("x = "..x, "NORMAL", "MINECRAFT-WORLDGEN")
 		math.randomseed(tArgs[2])
-		local block = math.random(6, 8)
-		posx = tostring(x)
-		posy = tostring(y)
-		local w = fs.open(",minecraft/world/"..tArgs[1].."/"..posx..","..posy, "w")
-		local aBlock = convertBlock(block)
-		w.write(aBlock)
-		w.close()
+		if y <= 7 then
+			if y >= 1 and y <= 3 and x >= 1 and x <= 3 then
+				docGen(1)
+			else
+				local block = math.random(2, 3)
+				docGen(block)
+				end
+		elseif y >= 8 and y <= 15 then
+			if y>= 8 and y <= 9
+				local block = math.random(6, 7)
+				docGen(block)
+			else
+				local block = math.random(7, 8)
+				docGen(block)
+				end
+		elseif y >= 16 and y <= 18 then
+			docGen(8)
+		elseif y == 19 then
+			docGen(12)
+			end
 		end
 	end
+
+mc.log("World: '"..tArgs[1].."' has been successfully generated!", "NORMAL", "MINECRAFT-WORLDGEN")

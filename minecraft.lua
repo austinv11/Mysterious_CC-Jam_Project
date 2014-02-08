@@ -78,7 +78,7 @@ local function loadWorld(world)
 if tArgs[1] == "New_World" then
 	genWorld()
 	loadWorld(name)
-elseif tArgs[1] then
+elseif tArgs[1]  ~= "New_world" then
 	loadWorld(tArgs[1])
 else
 	shell.run(",minecraft/start")

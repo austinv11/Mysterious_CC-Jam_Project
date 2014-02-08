@@ -116,7 +116,6 @@ local function play()
 				end
 			end
 		end
-	end
 	
 local function settings()
 	shell.run("edit ,minecraft/configs/minecraft.cfg")

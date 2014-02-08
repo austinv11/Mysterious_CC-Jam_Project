@@ -74,7 +74,7 @@ for i = 1, y2 do
 				docGen(block)
 				end
 		elseif y >= 8 and y <= 15 then
-			if y>= 8 and y <= 9
+			if y>= 8 and y <= 9 then
 				local block = math.random(6, 7)
 				docGen(block)
 			else

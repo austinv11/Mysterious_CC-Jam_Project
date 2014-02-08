@@ -35,8 +35,9 @@ local function play()
 				shell.run("minecraft", "New World")
 				break
 			else
-				mc.log("Preparing "..check[(y - 2)], "STDDER")
-				shell.run("minecraft", check[(y - 2)])
+				local it = y - 1
+				mc.log("Preparing "..check[it], "STDDER")
+				shell.run("minecraft", check[it])
 				end
 			end
 		end

@@ -1,33 +1,54 @@
-function gitGet(user, repo, branch, path, toPath)
+local ver = "0.1"
+
+local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world")
+	
+local function gitGet(user, repo, branch, path, toPath)
         local dl = http.get("https://raw.github.com/"..user.."/"..repo.."/"..branch.."/"..path)
-        term.write("Connecting to GitHub.......")
-        sleep(.125)
         if dl then
-                print("Connected!")
                 local file = dl.readAll()
-                term.write("Downloading File.......")
                 dl.close()
-                sleep(.125)
-                local check = fs.exists(toPath)
-                if check == true then
-                        term.setTextColor(colors.red)
-                        print("Error: File Already Exists!")
-                        term.setTextColor(colors.white)
-                else
                         local w = fs.open(toPath,"w")
                         if w then
                                 w.write(file)
                                 w.close()
-                                print("Downloaded as "..toPath.."!")
                                 return true
                         else
                                 w.close()
-                                term.write("Download Failed!")
                                 end
-                        end
         else
                 term.setTextColor(colors.red)
                 print("Connection Failed!")
                 term.setTextColor(colors.white)
                 end
         end
+        
+local function center(text)
+  local x, y = term.getSize()
+  local x2, y2 = term.getCursorPos()
+    term.setCursorPos(math.ceil((x / 2) - (text:len() / 2)), y2)
+    term.write(text)
+    y2 = y2 + 1
+    term.setCursorPos(1, y2)
+  end
+        
+local function setScreen()
+	while true do
+		term.clear()
+		term.setCursorPos(1,1)
+		term.setTextColor(colors.yellow)
+		print("MCCCMC-Installer Version "..ver)
+		term.setTextColor(colors.white)
+		print("Are you sure you want to install this? (Y/N")
+		print("*You won't regret it ;)")
+		local input = read()
+		input = string.lower(input)
+		if input == "y" then
+			prepInstall()
+			break
+		elseif input == "n" then
+			break
+			end
+		end
+	end
+
+setScreen()

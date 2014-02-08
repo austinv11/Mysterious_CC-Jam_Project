@@ -12,6 +12,7 @@ local function loadingScreen()
 	term.setCursorPos(1,2)
 	print(mj)
 	term.setTextColor(colors.white)
+	sleep(3)
 	end
 
 loadingScreen()

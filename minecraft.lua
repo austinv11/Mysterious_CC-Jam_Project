@@ -9,11 +9,11 @@ local function genWorld()
 		term.setTextColor(colors.yellow)
 		name = read()
 		term.setTextColor(colors.white)
-		if name ~= "New World" then
+		if name ~= "New_World" then
 			mc.log("New world name = "..name, "NORMAL", "MINECRAFT-WORLDGEN")
 			break
 		else
-			mc.log("Error: world name = 'New World'", "SEVERE", "MINECRAFT-WORLDGEN")
+			mc.log("Error: world name = 'New_World'", "SEVERE", "MINECRAFT-WORLDGEN")
 			end
 		end
 	term.write("Seed (Type 'void' for random seed): ")
@@ -40,7 +40,7 @@ local function loadWorld(world)
 	
 	end
 
-if tArgs[1] == "New World" then
+if tArgs[1] == "New_World" then
 	genWorld()
 elseif tArgs[1] then
 	loadWorld(tArgs[1])

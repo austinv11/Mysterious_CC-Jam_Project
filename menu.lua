@@ -130,7 +130,7 @@ local function play()
 			elseif key == 28 then
 				if pos > w then
 					mc.log("Preparing new world...", "STDDER")
-					shell.run("minecraft", "New World")
+					shell.run("minecraft", "New_World")
 					break
 				else
 					mc.log("Preparing "..check[pos], "STDDER")

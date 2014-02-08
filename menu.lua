@@ -44,6 +44,7 @@ local function play()
 	
 local function settings()
 	shell.run("edit ,minecraft/configs/minecraft.cfg")
+	mc.log("Editted configs")
 	end
 	
 local function quit()

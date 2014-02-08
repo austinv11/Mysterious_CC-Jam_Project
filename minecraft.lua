@@ -39,6 +39,7 @@ local function loadWorld(world)
 	mc.log("Loading "..tArgs[1], "SEVERE")
 	mc.hook("loading world")
 	term.clear()
+	term.setCursorPos(1,1)
 	term.setBackgroundColor(colors.brown)
 	local a, s = term.getSize()
 	for i = 1, s do
@@ -60,7 +61,9 @@ local function loadWorld(world)
 		m = m + 1
 		for o = 1, a do
 			ax = ax + 1
-			local r = fs.open(ax..","..ay)
+			axx = tostring(ax)
+			ayy = tostring(ay)
+			local r = fs.open(axx..","..ayy, "r")
 			local k = r.readAll()
 			r.close()
 			k = tonumber(k)

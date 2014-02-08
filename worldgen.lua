@@ -40,9 +40,9 @@ local function convertBlock(blk)
 		end
 	end
 
-local function docGen(blllck)
-	posx = tostring(x)
-	posy = tostring(y)
+local function docGen(x2, y2, blllck)
+	posx = tostring(x2)
+	posy = tostring(y2)
 	local w = fs.open(",minecraft/world/"..tArgs[1].."/"..posx..","..posy, "w")
 	local aBlock = convertBlock(blllck)
 	w.write(aBlock)
@@ -68,23 +68,23 @@ for i = 1, y2 do
 		math.randomseed(tArgs[2])
 		if y <= 7 then
 			if y >= 1 and y <= 3 and x >= 1 and x <= 3 then
-				docGen(1)
+				docGen(x, y, 1)
 			else
 				local block = math.random(2, 3)
-				docGen(block)
+				docGen(x, y, block)
 				end
 		elseif y >= 8 and y <= 15 then
 			if y>= 8 and y <= 9 then
 				local block = math.random(6, 7)
-				docGen(block)
+				docGen(x, y, block)
 			else
 				local block = math.random(7, 8)
-				docGen(block)
+				docGen(x, y, block)
 				end
 		elseif y >= 16 and y <= 18 then
-			docGen(8)
+			docGen(x, y, 8)
 		elseif y == 19 then
-			docGen(12)
+			docGen(x, y, 12)
 			end
 		end
 	end

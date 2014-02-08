@@ -11,9 +11,7 @@ local function loadingScreen()
 	term.setTextColor(colors.orange)
 	term.clear()
 	term.setCursorPos(1,2)
-	for name, data in pairs(mj) do
-		mc.center(data)
-		end
+	mc.center(mj)
 	term.setTextColor(colors.white)
 	end
 

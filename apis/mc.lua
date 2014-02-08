@@ -28,3 +28,11 @@ function center(text)
     y2 = y2 + 1
     term.setCursorPos(1, y2)
   end
+  
+function hook(event)
+	local tble = {}
+	tble = fs.list(",minecraft/mods")
+	for name, data in pairs do
+		shell.run(",minecraft/mods/"..data.." "..event)
+		end
+	end

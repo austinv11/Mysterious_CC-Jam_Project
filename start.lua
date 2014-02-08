@@ -35,6 +35,7 @@ for name, data in pairs(table) do
 if x ~= 0 then
 	mc.log(x.." mods found!", "NORMAL", "MINECRAFT-MODLOADER")
 	mc.log("Loading mods...",  "STDDER", "MINECRAFT-MODLOADER")
+	mc.hook("startup")
 	for name, data in pairs(table) do
 		local data2 = string.upper(data)
 		mc.log("Loading...", "SEVERE", data2)
@@ -57,3 +58,5 @@ for name, data in pairs(table) do
 	mc.log("Loaded "..data, "STDDER")
 	end
 mc.log("Finished loading "..x.." configs!")
+mc.log("Loading 'menu'...", "STDDER")
+shell.run(",minecraft/menu")

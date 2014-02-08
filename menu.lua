@@ -101,7 +101,7 @@ local function selection()
 			print(" ")
 			mc.center("[Quit]")
 			end
-		insternal1()
+		internal2()
 		--local mousef = internal1()
 		--local keyf = internal2()
 		--parallel.waitForAny(mousef, keyf)

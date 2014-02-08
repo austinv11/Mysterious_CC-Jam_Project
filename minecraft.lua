@@ -37,11 +37,12 @@ local function genWorld()
 
 local function loadWorld(world)
 	mc.log("Loading "..tArgs[1], "SEVERE")
-	
+	mc.hook("loading world")
 	end
 
 if tArgs[1] == "New_World" then
 	genWorld()
+	loadWorld(name)
 elseif tArgs[1] then
 	loadWorld(tArgs[1])
 else

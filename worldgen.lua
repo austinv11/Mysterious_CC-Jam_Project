@@ -49,6 +49,7 @@ local function docGen(x2, y2, blllck)
 	w.close()
 	end
 	
+mc.hook("worldgen")
 mc.log("dir made", "NORMAL", "MINECRAFT-WORLDGEN")
 fs.makeDir(",minecraft/world/"..tArgs[1])
 
@@ -57,6 +58,7 @@ local y = 0
 local x2, y2 = term.getSize()
 local seed = tonumber(tArgs[2])
 mc.log("seed = "..seed, "NORMAL", "MINECRAFT-WORLDGEN")
+mc.log("generating...", "SEVERE", "MINECRAFT-WORLDGEN")
 
 for i = 1, y2 do
 	y = y + 1

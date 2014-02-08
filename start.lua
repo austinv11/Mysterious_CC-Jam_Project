@@ -4,6 +4,13 @@ os.loadAPI(",minecraft/blockData/background")
 os.loadAPI(",minecraft/blockData/tiles")
 
 local function loadingScreen()
+	term.setBackgroundColor(colors.white)
+	j, k = term.getSize()
+	for e = 1, k do
+		for r = 1, j do
+			term.write(" ")
+			end
+		end
 	local r = fs.open(",minecraft/assets/mojang", "r")
 	mj = r.readAll()
 	r.close()
@@ -13,6 +20,7 @@ local function loadingScreen()
 	print(mj)
 	term.setTextColor(colors.white)
 	sleep(3)
+	term.setBackgroundColor(colors.black)
 	end
 
 loadingScreen()
@@ -59,4 +67,9 @@ mc.log("Finished loading "..x.." configs!")
 mc.log("Loading 'menu'...", "STDDER")
 term.clear()
 term.setCursorPos(1,1)
+for e = 1, k do
+		for r = 1, j do
+			term.write(" ")
+			end
+		end
 shell.run(",minecraft/menu")

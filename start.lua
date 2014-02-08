@@ -4,7 +4,7 @@ os.loadAPI(",minecraft/blockData/background")
 os.loadAPI(",minecraft/blockData/tiles")
 
 local function loadingScreen()
-	local r = fs.open(",minecraft/assets/mojang")
+	local r = fs.open(",minecraft/assets/mojang", "r")
 	local mj = {}
 	mj = r.readAll()
 	r.close()

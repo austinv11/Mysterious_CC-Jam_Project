@@ -1,4 +1,4 @@
-local ver = "0.1"
+local ver = "1.0"
 
 local dirs = {",minecraft", ",minecraft/apis", ",minecraft/assets", ",minecraft/blockData", ",minecraft/configs", ",minecraft/logs", ",minecraft/mods", ",minecraft/world"}
 

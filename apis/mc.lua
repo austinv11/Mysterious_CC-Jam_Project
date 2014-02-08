@@ -1,4 +1,4 @@
-version = "0.1"
+version = "ALPHABUILD 1.0"
 
 function createLog()
 	local time = os.time()

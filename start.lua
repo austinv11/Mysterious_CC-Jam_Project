@@ -57,4 +57,6 @@ for name, data in pairs(table) do
 	end
 mc.log("Finished loading "..x.." configs!")
 mc.log("Loading 'menu'...", "STDDER")
+term.clear()
+term.setCursorPos(1,1)
 shell.run(",minecraft/menu")

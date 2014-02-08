@@ -3,7 +3,7 @@ version = "ALPHABUILD 1.0"
 function createLog()
 	local time = os.time()
 	local w = fs.open(",minecraft/logs/minecraft-log", "w")
-	w.writeLine("[MINECRAFT]["..time.."][NORMAL]")
+	w.writeLine("["..[["]].."MINECRAFT"..[["]].."]["..time.."][NORMAL]")
 	w.close()
 	end
 	
@@ -16,7 +16,7 @@ function log(event, tag, tagname)
 		tagname = "MINECRAFT"
 		end
 	local w = fs.open(",minecraft/logs/minecraft-log", "a")
-	w.writeLine("["..tagname.."]["..time.."]["..tag.."] "..event)
+	w.writeLine("["..[["]]..tagname..[["]].."]["..time.."]["..tag.."] "..event)
 	w.close()
 	end
 	

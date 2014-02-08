@@ -2,8 +2,8 @@ local ver = "0.1"
 
 local dirs = {"apis", "assets", "blockData", "configs", "logs", "mods", "world")
 	
-local function gitGet(user, repo, branch, path, toPath)
-        local dl = http.get("https://raw.github.com/"..user.."/"..repo.."/"..branch.."/"..path)
+local function gitGet(path, toPath)
+        local dl = http.get("https://raw.github.com/austinv11/Mysterious_CC-Jam_Project/master/"..path)
         if dl then
                 local file = dl.readAll()
                 dl.close()
@@ -30,7 +30,17 @@ local function center(text)
     y2 = y2 + 1
     term.setCursorPos(1, y2)
   end
+  
+local function prepInstall()
+	for name, data in pairs(dirs) do
+		fs.makeDir(data)
+		end
+	end
         
+local function download()
+	gitG
+	end
+	
 local function setScreen()
 	while true do
 		term.clear()
@@ -44,6 +54,7 @@ local function setScreen()
 		input = string.lower(input)
 		if input == "y" then
 			prepInstall()
+			download()
 			break
 		elseif input == "n" then
 			break

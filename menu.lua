@@ -13,8 +13,15 @@ local function header()
 local function play()
 	term.clear()
 	term.setCursorPos(1,1)
+	term.setTextColor(colors.lime)
 	mc.center("Worlds")
-	term.setCursorPos(1, 3)
+	term.setTextColor(colors.yellow)
+	local q, w = term.getSize()
+	for l = 1, q do
+		term.write("~")
+		end
+	term.setTextColor(colors.white)
+	term.setCursorPos(1, 4)
 	mc.log("Getting worlds...", "STDDER")
 	local check = {}
 	check = fs.list(",minecraft/world")

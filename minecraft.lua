@@ -4,9 +4,21 @@ local function genWorld()
 	mc.log("Getting user info","NORMAL","MINECRAFT-WORLDGEN")
 	term.clear()
 	term.setCursorPos(1,2)
+	while true do
+		term.write("Please enter the name of the world: ")
+		term.setTextColor(colors.yellow)
+		name = read()
+		term.setTextColor(colors.white)
+		if name ~= "New World" then
+			mc.log("New world name = "..name, "NORMAL", "MINECRAFT-WORLDGEN")
+			break
+		else
+			mc.log("Error: world name = 'New World'", "SEVERE", "MINECRAFT-WORLDGEN")
+			end
+		end
 	term.write("Seed (Type 'void' for random seed): ")
 	term.setTextColor(colors.yellow)
-	local seed = read()
+	seed = read()
 	seed = string.lower(seed)
 	term.setTextColor(colors.white)
 	if seed == "void" then

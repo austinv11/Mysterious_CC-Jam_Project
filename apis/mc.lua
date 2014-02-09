@@ -74,3 +74,11 @@ function convertColor(blockString)
 		return tiles.playerBottom
 		end
 	end
+	
+function getBlockData(worldname, x, y)
+	local r = fs.open(",minecraft/world/"..worldname.."/"..axx..","..ayy, "r")
+	local k = r.readAll()
+	r.close()
+	mc.log("Error: fs is closed!", "SEVERE")
+	return k
+	end

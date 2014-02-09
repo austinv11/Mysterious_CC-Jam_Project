@@ -83,6 +83,14 @@ for i = 1, y2 do
 				docGen(x, y, 1)
 			else
 				local block = math.random(2, 3)
+				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
+				local cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
+				if cBlock1 ~= blockids[block] and cBlock2 ~= blockids[block] then
+					block = math.random(2, 3)
+					if cBlock1 ~= blockids[block] then
+						block = math.random(2, 3)
+						end
+					end
 				docGen(x, y, block)
 				end
 		elseif y >= 8 and y <= 15 then
@@ -91,9 +99,31 @@ for i = 1, y2 do
 				if block == 5 then
 					block = 3
 					end
+				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
+				local cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
+				if cBlock1 ~= blockids[block] and cBlock2 ~= blockids[block] then
+					block = math.random(5, 7)
+					if block == 5 then
+						block = 3
+						end
+					if cBlock1 ~= blockids[block] then
+						block = math.random(5, 7)
+						if block == 5 then
+							block = 3
+							end
+						end
+					end
 				docGen(x, y, block)
 			else
 				local block = math.random(7, 8)
+				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
+				local cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
+				if cBlock1 ~= blockids[block] and cBlock2 ~= blockids[block] then
+					block = math.random(7, 8)
+					if cBlock1 ~= blockids[block] then
+						block = math.random(7, 8)
+						end
+					end
 				docGen(x, y, block)
 				end
 		elseif y >= 16 and y <= 18 then

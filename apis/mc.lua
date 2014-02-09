@@ -77,8 +77,8 @@ function convertColor(blockString)
 		end
 	end
 	
-function getBlockData(worldname, x, y)
-	local r = fs.open(",minecraft/world/"..worldname.."/"..axx..","..ayy, "r")
+function getBlockData(worldname, axxx, ayyy)
+	local r = fs.open(",minecraft/world/"..worldname.."/"..axxx..","..ayyy, "r")
 	local k = r.readAll()
 	r.close()
 	mc.log("Error: fs is closed!", "SEVERE")

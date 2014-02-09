@@ -56,7 +56,7 @@ fs.makeDir(",minecraft/world/"..tArgs[1])
 local x = 0
 local y = 0
 local x2, y2 = term.getSize()
-local sseed = tostring(tArgs[2])
+local sseed = tArgs[2]
 mc.log("seed = "..sseed, "NORMAL", "MINECRAFT-WORLDGEN")
 local seed = {}
 for j = 1, seed:len() do

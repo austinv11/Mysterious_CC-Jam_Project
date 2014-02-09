@@ -30,7 +30,7 @@ function center(text)
   end
   
 function hook(event)
-	log("Hooking "..event, "STDDER", "MINECRAFT-MODLOADER")
+	log("Hooking '"..event.."'", "STDDER", "MINECRAFT-MODLOADER")
 	local tble = {}
 	tble = fs.list(",minecraft/mods")
 	if tble[1] then

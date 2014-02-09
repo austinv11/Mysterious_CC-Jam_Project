@@ -16,7 +16,7 @@ local function genWorld()
 			mc.log("Error: world name = 'New_World'", "SEVERE", "MINECRAFT-WORLDGEN")
 			end
 		end
-	term.write("Seed (Type 'void' for random seed): ")
+	--[[term.write("Seed (Type 'void' for random seed): ")
 	term.setTextColor(colors.yellow)
 	seed = read()
 	seed = string.lower(seed)
@@ -29,7 +29,7 @@ local function genWorld()
 		mc.log("converting seed to become readable...", "NORMAL", "MINECRAFT-WORLDGEN")
 		seed = string.byte(seed)
 		mc.log("done", "NORMAL", "MINECRAFT-WORLDGEN")
-		end
+		end]]--
 	mc.log("generating...", "SEVERE", "MINECRAFT-WORLDGEN")
 	shell.run(",minecraft/worldgen", name, seed)
 	end

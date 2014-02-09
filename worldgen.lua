@@ -56,13 +56,13 @@ fs.makeDir(",minecraft/world/"..tArgs[1])
 local x = 0
 local y = 0
 local x2, y2 = term.getSize()
-local sseed = tArgs[2]
+--[[local sseed = tArgs[2]
 mc.log("seed = "..sseed, "NORMAL", "MINECRAFT-WORLDGEN")
 local seed = {}
 for j = 1, seed:len() do
 	table.insert(seed, seed:sub(j, j))
 	end
-local tx = 0
+local tx = 0]]--
 mc.log("generating...", "SEVERE", "MINECRAFT-WORLDGEN")
 mc.hook("worldgen-world")
 
@@ -71,13 +71,13 @@ for i = 1, y2 do
 	x = 0
 	mc.log("Generating y = "..y, "STDDER", "MINECRAFT-WORLDGEN")
 	for f = 1, x2 do
-		tx = tx + 1
+		--tx = tx + 1
 		x = x + 1
-		if seed[tx] == nil then
+		--[[if seed[tx] == nil then
 			tx = 1
 			end
 		local seedNum = tonumber(seed[tx])
-		math.randomseed(seedNum)
+		math.randomseed(seedNum)]]--
 		if y <= 7 then
 			if y >= 1 and y <= 3 and x >= 1 and x <= 3 then
 				docGen(x, y, 1)

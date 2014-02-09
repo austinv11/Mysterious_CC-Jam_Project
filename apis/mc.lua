@@ -30,6 +30,7 @@ function center(text)
   end
   
 function hook(event)
+	log("Hooking "..event, "STDDER", "MINECRAFT-MODLOADER")
 	local tble = {}
 	tble = fs.list(",minecraft/mods")
 	if tble[1] then
@@ -37,6 +38,7 @@ function hook(event)
 			shell.run(",minecraft/mods/"..data.." "..event)
 			end
 		end
+	log("Hooked!", "NORMAL", "MINECRAFT-MODLOADER")
 	end
 	
 function convertColor(blockString)

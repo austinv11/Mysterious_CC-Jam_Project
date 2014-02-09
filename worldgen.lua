@@ -49,7 +49,7 @@ local function docGen(x2, y2, blllck)
 	w.close()
 	end
 	
-mc.hook("worldgen")
+mc.hook("worldgen-dir")
 mc.log("dir made", "NORMAL", "MINECRAFT-WORLDGEN")
 fs.makeDir(",minecraft/world/"..tArgs[1])
 
@@ -59,7 +59,15 @@ local x2, y2 = term.getSize()
 local seed = tonumber(tArgs[2])
 mc.log("seed = "..seed, "NORMAL", "MINECRAFT-WORLDGEN")
 mc.log("generating...", "SEVERE", "MINECRAFT-WORLDGEN")
+mc.hook("worldgen-world")
 
+for i = 1, y2 do
+	y = y + 1
+	x = 0
+	mc.log("Generating y = "..y, "STDDER", "MINECRAFT-WORLDGEN")
+	for f = 1, x2 do
+		x = x + 1
+--[[ -OLD WORLDGENERATOR(DEPRECATED)
 for i = 1, y2 do
 	y = y + 1
 	x = 0
@@ -90,5 +98,5 @@ for i = 1, y2 do
 			end
 		end
 	end
-
+]]--
 mc.log("World: '"..tArgs[1].."' has been successfully generated!", "NORMAL", "MINECRAFT-WORLDGEN")

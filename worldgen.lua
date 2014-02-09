@@ -40,11 +40,11 @@ local function convertBlock(blk)
 		end
 	end
 
-local function docGen(x2, y2, blllck)
+local function docGen(x2, y2, sblock)
 	posx = tostring(x2)
 	posy = tostring(y2)
 	local w = fs.open(",minecraft/world/"..tArgs[1].."/"..posx..","..posy, "w")
-	local aBlock = convertBlock(blllck)
+	local aBlock = convertBlock(sblock)
 	w.write(aBlock)
 	w.close()
 	end

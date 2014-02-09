@@ -28,7 +28,6 @@ local function genWorld()
 	else
 		mc.log("converting seed to become readable...", "NORMAL", "MINECRAFT-WORLDGEN")
 		seed = string.byte(seed)
-		seed = tonumber(seed)
 		mc.log("done", "NORMAL", "MINECRAFT-WORLDGEN")
 		end
 	mc.log("generating...", "SEVERE", "MINECRAFT-WORLDGEN")
@@ -68,8 +67,10 @@ local function loadWorld(world)
 			ayy = tostring(ay)
 			local blockd = mc.getBlockData(world, axx, ayy)
 			local coloring = mc.convertColor(blockd)
-			term.setBackgroundColor(coloring)
-			term.write(" ")
+			if coloring then
+				term.setBackgroundColor(coloring)
+				term.write(" ")
+				end
 			end
 		ax = 0
 		term.setCursorPos(1, m)

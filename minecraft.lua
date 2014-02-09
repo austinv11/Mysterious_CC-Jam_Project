@@ -66,8 +66,12 @@ local function loadWorld(world)
 			axx = tostring(ax)
 			ayy = tostring(ay)
 			local r = fs.open(",minecraft/world/"..world.."/"..axx..","..ayy, "r")
-			local k = r.readAll()
-			r.close()
+			if r then
+				local k = r.readAll()
+				r.close()
+			else
+				mc.log("Error: fs is closed!", "SEVERE")
+				end
 			local coloring = mc.convertColor(k)
 			term.setBackgroundColor(coloring)
 			term.write(" ")

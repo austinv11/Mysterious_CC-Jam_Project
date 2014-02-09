@@ -93,7 +93,7 @@ for i = 1, y2 do
 					end
 				docGen(x, y, block)
 				end
-		elseif y >= 7 then
+		elseif y <= 7 then
 			docGen(x, y, 3)
 		elseif y >= 8 and y <= 15 then
 			if y>= 8 and y <= 9 then

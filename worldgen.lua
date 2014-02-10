@@ -101,7 +101,7 @@ for i = 1, y2 do
 				if block == 5 then
 					block = 3
 					end
-				Block1 = mc.getBlockData(tArgs[1], (x-1), y)
+				cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
 				cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
 				if cBlock1 ~= blockids[block] and cBlock2 ~= blockids[block] then
 					block = math.random(5, 7)
@@ -115,13 +115,14 @@ for i = 1, y2 do
 							end
 						end
 					end
-				if cBlock2 == "background.sky" and blockids[block] ~= "background.sky" then
-					block = math.random(6, 7)
-					end
-				if cBlock2 ~= "background.sky" and blockids[block] == "blocks.grass" then
-					block = 7
-				elseif cBlock2 == "background.sky" and blockids[block] == "blocks.dirt" then
-					block = 10
+				if blockids[block] == "blocks.grass" then
+					if cBlock2 ~= "background.sky" then
+						block = 7
+						end
+				elseif blockids[block] == "blocks.dirt" then
+					if cBlock2 == "background.sky" then
+						block = 6
+						end
 					end
 				docGen(x, y, block)
 			else

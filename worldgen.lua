@@ -120,7 +120,7 @@ for i = 1, y2 do
 					end
 				if cBlock2 ~= "background.sky" and blockids[block] == "blocks.grass" then
 					block = 7
-				elseif cBlock2 ~= "background.sky" and blockids[block] == "blocks.dirt" then
+				elseif cBlock2 == "background.sky" and blockids[block] == "blocks.dirt" then
 					block = 6
 					end
 				docGen(x, y, block)

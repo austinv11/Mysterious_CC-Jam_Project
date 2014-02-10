@@ -115,6 +115,8 @@ for i = 1, y2 do
 							end
 						end
 					end
+				cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
+				cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
 				if blockids[block] == "blocks.grass" then
 					if cBlock2 ~= "background.sky" then
 						block = 7

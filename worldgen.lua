@@ -121,9 +121,9 @@ for i = 1, y2 do
 				if cBlock2 ~= "background.sky" and blockids[block] == "blocks.grass" then
 					block = 7
 					end
-				if cBlock2 == "background.sky" and blockids[block] ~= "blocks.grass" then
+				--[[if cBlock2 == "background.sky" and blockids[block] == "blocks.dirt" then
 					block = 6
-					end
+					end]]--
 				docGen(x, y, block)
 			else
 				local block = math.random(7, 8)

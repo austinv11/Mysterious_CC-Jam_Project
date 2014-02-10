@@ -120,11 +120,10 @@ for i = 1, y2 do
 					end
 				if cBlock2 ~= "background.sky" and blockids[block] == "blocks.grass" then
 					block = 7
-					docGen(x, y, block)
 				elseif cBlock2 == "background.sky" and blockids[block] == "blocks.dirt" then
-					block = 6
-					docGen(x, y, block)
+					block = 3
 					end
+				docGen(x, y, block)
 			else
 				local block = math.random(7, 8)
 				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)

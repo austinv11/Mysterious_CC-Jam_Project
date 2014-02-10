@@ -91,6 +91,9 @@ for i = 1, y2 do
 						block = math.random(2, 3)
 						end
 					end
+				if cBlock1 == "blocks.grass" and blockids[block] == "blocks.grass" then
+					block = 7
+					end
 				docGen(x, y, block)
 				end
 		elseif y <= 7 then

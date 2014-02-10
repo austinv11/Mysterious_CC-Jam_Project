@@ -118,9 +118,9 @@ for i = 1, y2 do
 				if cBlock2 == "background.sky" and blockids[block] ~= "background.sky" then
 					block = math.random(6, 7)
 					end
-				--[[if cBlock2 ~= "background.sky" and blockids[block] == "blocks.grass" then
-					block = 7
-					end]]--
+				if cBlock2 == "background.sky" and blockids[block] ~= "blocks.grass" then
+					block = 6
+					end
 				if cBlock2 == "background.sky" and blockids[block] == "blocks.dirt" then
 					block = 6
 					end

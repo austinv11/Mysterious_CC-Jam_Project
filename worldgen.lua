@@ -115,15 +115,6 @@ for i = 1, y2 do
 							end
 						end
 					end
-				if blockids[block] == "blocks.grass" then
-					if cBlock2 ~= "background.sky" then
-						block = 7
-						end
-				elseif blockids[block] == "blocks.dirt" then
-					if cBlock2 == "background.sky" then
-						block = 6
-						end
-					end
 				docGen(x, y, block)
 			else
 				local block = math.random(7, 8)
@@ -135,14 +126,8 @@ for i = 1, y2 do
 						block = math.random(7, 8)
 						end
 					end
-				if blockids[block] == "blocks.grass" then
-					if cBlock2 ~= "background.sky" then
-						block = 7
-						end
-				elseif blockids[block] == "blocks.dirt" then
-					if cBlock2 == "background.sky" then
-						block = 6
-						end
+				if blockids[block] == "blocks.dirt" then
+					block = math.random(7,8)
 					end
 				docGen(x, y, block)
 				end

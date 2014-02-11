@@ -122,12 +122,12 @@ for i = 1, y2 do
 				local cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
 				if cBlock1 ~= blockids[block] and cBlock2 ~= blockids[block] then
 					block = math.random(7, 8)
+					if blockids[block] == "blocks.dirt" then
+						block = math.random(7,8)
+						end
 					if cBlock1 ~= blockids[block] then
 						block = math.random(7, 8)
 						end
-					end
-				if blockids[block] == "blocks.dirt" then
-					block = math.random(7,8)
 					end
 				docGen(x, y, block)
 				end

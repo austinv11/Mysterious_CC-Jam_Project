@@ -117,13 +117,13 @@ for i = 1, y2 do
 					end
 				if blockids[block] == "blocks.dirt" then
 					if cBlock2 == "background.sky" then
-						mc.log("Dirt > Grass, x = "..x.."y = "..y, "NORMAL", "MINECRAFT-WORLDGEN")
+						mc.log("Dirt > Grass, x = "..x.." y = "..y, "NORMAL", "MINECRAFT-WORLDGEN")
 						block = 6
 						end
 					end
 				if blockids[block] == "blocks.grass" then
 					if cBlock2 ~= "background.sky" then
-						mc.log("Grass > Dirt, x = "..x.."y = "..y, "NORMAL", "MINECRAFT-WORLDGEN")
+						mc.log("Grass > Dirt, x = "..x.." y = "..y, "NORMAL", "MINECRAFT-WORLDGEN")
 						block = 7
 						end
 					end

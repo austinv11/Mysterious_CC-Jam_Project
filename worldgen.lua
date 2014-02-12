@@ -85,11 +85,11 @@ for i = 1, y2 do
 				local block = math.random(2, 3)
 				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
 				if cBlcok1 then
-					mc.log("CBLOCK1", "NORMAL", "MINECRAFT-DEBUG")
+					mc.log("CBLOCK1", "NORMAL", "MINECRAFT-DEBUG")-- debug
 					end
 				local cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
 				if cBlcok2 then
-					mc.log("CBLOCK2", "NORMAL", "MINECRAFT-DEBUG")
+					mc.log("CBLOCK2", "NORMAL", "MINECRAFT-DEBUG")--debug
 					end
 				if cBlock1 ~= blockids[block] and cBlock2 ~= blockids[block] then
 					block = math.random(2, 3)
@@ -127,12 +127,12 @@ for i = 1, y2 do
 						block = 11
 						end
 					end
-				if blockids[block] == "blocks.grass" then
+				--[[if blockids[block] == "blocks.grass" then
 					if cBlock2 ~= "background.sky" then
 						mc.log("Grass > Dirt, x = "..x.." y = "..y, "NORMAL", "MINECRAFT-WORLDGEN")
 						block = 10
 						end
-					end
+					end]]--
 				docGen(x, y, block)
 			else
 				local block = math.random(7, 8)

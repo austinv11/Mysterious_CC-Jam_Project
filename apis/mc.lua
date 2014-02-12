@@ -81,7 +81,7 @@ function getBlockData(worldname, axxx, ayyy)
 	local r = fs.open(",minecraft/world/"..worldname.."/"..axxx..","..ayyy, "r")
 	if r then
 		local k = r.readAll()
-		mc.log("R = "..k, "NORMAL", "MINECRAFT-DEBUG")
+		mc.log("R = "..k, "NORMAL", "MINECRAFT-DEBUG")--debug
 		r.close()
 		return k
 

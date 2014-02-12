@@ -84,7 +84,13 @@ for i = 1, y2 do
 			else
 				local block = math.random(2, 3)
 				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
+				if cBlcok1 then
+					mc.log("CBLOCK1", "NORMAL", "MINECRAFT-DEBUG")
+					end
 				local cBlock2 = mc.getBlockData(tArgs[1], x, (y+1))
+				if cBlcok2 then
+					mc.log("CBLOCK2", "NORMAL", "MINECRAFT-DEBUG")
+					end
 				if cBlock1 ~= blockids[block] and cBlock2 ~= blockids[block] then
 					block = math.random(2, 3)
 					if cBlock1 ~= blockids[block] then

@@ -117,14 +117,16 @@ for i = 1, y2 do
 					end
 				if blockids[block] == "blocks.dirt" then
 					if cBlock2 == "background.sky" then
+						mc.log("Dirt > Grass, x = "..x.."y = "..y, "NORMAL", "MINECRAFT-WROLDGEN")
 						block = 6
 						end
 					end
-				--[[if blockids[block] == "blocks.grass" then
+				if blockids[block] == "blocks.grass" then
 					if cBlock2 ~= "background.sky" then
+						mc.log("Grass > Dirt, x = "..x.."y = "..y, "NORMAL", "MINECRAFT-WROLDGEN")
 						block = 7
 						end
-					end]]--
+					end
 				docGen(x, y, block)
 			else
 				local block = math.random(7, 8)

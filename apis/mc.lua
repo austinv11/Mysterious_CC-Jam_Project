@@ -89,3 +89,22 @@ function getBlockData(worldname, axxx, ayyy)
 		mc.log("Error: fs is closed!", "SEVERE")
 		end
 	end
+	
+function convertBlock(blk)
+	local z = 1
+	for name, data in pairs(blockids) do
+		if z == blk then
+			return data
+			end
+		z = z + 1
+		end
+	end
+	
+function docGen(world, x2, y2, sblock)
+	posx = tostring(x2)
+	posy = tostring(y2)
+	local w = fs.open(",minecraft/world/"..world.."/"..posx..","..posy, "w")
+	local aBlock = convertBlock(sblock)
+	w.write(aBlock)
+	w.close()
+	end

@@ -29,25 +29,6 @@ blockids = {
 "tiles.playerHead",
 "tiles.playerBottom"
 }
-
-local function convertBlock(blk)
-	local z = 1
-	for name, data in pairs(blockids) do
-		if z == blk then
-			return data
-			end
-		z = z + 1
-		end
-	end
-
-local function docGen(x2, y2, sblock)
-	posx = tostring(x2)
-	posy = tostring(y2)
-	local w = fs.open(",minecraft/world/"..tArgs[1].."/"..posx..","..posy, "w")
-	local aBlock = convertBlock(sblock)
-	w.write(aBlock)
-	w.close()
-	end
 	
 mc.hook("worldgen-dir")
 mc.log("dir made", "NORMAL", "MINECRAFT-WORLDGEN")
@@ -80,7 +61,7 @@ for i = 1, y2 do
 		math.randomseed(seedNum)]]--
 		if y <= 3 then
 			if y >= 1 and y <= 3 and x >= 1 and x <= 3 then
-				docGen(x, y, 1)
+				mc.docGen(tArgs[1], x, y, 1)
 			else
 				local block = math.random(2, 3)
 				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
@@ -97,10 +78,10 @@ for i = 1, y2 do
 						block = math.random(2, 3)
 						end
 					end
-				docGen(x, y, block)
+				mc.docGen(tArgs[1], x, y, block)
 				end
 		elseif y <= 7 then
-			docGen(x, y, 3)
+			mc.docGen(tArgs[1], x, y, 3)
 		elseif y >= 8 and y <= 15 then
 			if y>= 8 and y <= 9 then
 				local block = math.random(5, 7)
@@ -133,7 +114,7 @@ for i = 1, y2 do
 						block = 7
 						end
 					end]]--
-				docGen(x, y, block)
+				mc.docGen(tArgs[1], x, y, block)
 			else
 				local block = math.random(7, 8)
 				local cBlock1 = mc.getBlockData(tArgs[1], (x-1), y)
@@ -147,14 +128,31 @@ for i = 1, y2 do
 						block = math.random(7, 8)
 						end
 					end
-				docGen(x, y, block)
+				mc.docGen(tArgs[1], x, y, block)
 				end
 		elseif y >= 16 and y <= 18 then
-			docGen(x, y, 8)
+			mc.docGen(tArgs[1], x, y, 8)
 		elseif y == 19 then
-			docGen(x, y, 12)
+			mc.docGen(tArgs[1], x, y, 12)
 			end
 		end
 	end
 
 mc.log("World: '"..tArgs[1].."' has been successfully generated!", "NORMAL", "MINECRAFT-WORLDGEN")
+mc.log("Setting Spawn Point...", "STDDER", "MINECRAFT-WORLDGEN")
+local px = 3
+local py = 10
+while true do
+	local spawn1 = mc.getBlockData(tArgs[1], px, py)
+	local spawn2 = mc.getBlockData(tArgs[1], px, (py - 1))
+	local spawn3 = mc.getBlockData(tArgs[1], px, (py + 1))
+	if spawn1 == "background.sky" and spawn2 == "background.sky" and spawn3 ~= "background.sky" then
+		break
+	elseif spawn3 == "background.sky" then
+		py = py + 1
+	else
+		py = py - 1
+		end
+	end
+mc.docGen(tArgs[1], px, py, 16)
+mc.docGen(tArgs[1], px, (py - 1), 15)

@@ -77,16 +77,16 @@ function convertColor(blockString)
 		end
 	end
 	
-function getBlockData(worldname, axxx, ayyy)
-	local r = fs.open(",minecraft/world/"..worldname.."/"..axxx..","..ayyy, "r")
+function getBlockData(worldname, axxx, ayyy)--gonna try using io
+	local r = io.open(",minecraft/world/"..worldname.."/"..axxx..","..ayyy, "r")
 	if r then
-		local k = r.readAll()
+		local k = r:read("*l")
 		mc.log("R = "..k, "NORMAL", "MINECRAFT-DEBUG")--debug
-		r.close()
+		r:close()
 		return k
 
 	else
-		mc.log("Error: fs is closed!", "SEVERE")
+		mc.log("Error: io is closed!", "SEVERE")
 		end
 	end
 	
@@ -100,11 +100,11 @@ function convertBlock(blk)
 		end
 	end
 	
-function docGen(world, genx, geny, genblock)
+function docGen(world, genx, geny, genblock) -- trying io
 	posx = tostring(genx)
 	posy = tostring(geny)
-	local w = fs.open(",minecraft/world/"..world.."/"..posx..","..posy, "w")
+	local w = io.open(",minecraft/world/"..world.."/"..posx..","..posy, "w")
 	local aBlock = convertBlock(genblock)
-	w.write(aBlock)
-	w.close()
+	w:write(aBlock)
+	w:close()
 	end

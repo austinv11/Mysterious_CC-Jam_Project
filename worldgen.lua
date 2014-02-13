@@ -156,3 +156,4 @@ while true do
 	end
 mc.docGen(tArgs[1], px, py, 16)
 mc.docGen(tArgs[1], px, (py - 1), 15)
+mc.log("Spawn set! At x:"..px.." y:"..py, "NORMAL", "MINECRAFT-WORLDGEN")

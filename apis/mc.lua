@@ -1,4 +1,4 @@
-version = "ALPHABUILD 1.0"
+version = "ALPHABUILD 1.1"
 
 function createLog()
 	local time = os.time()
@@ -100,11 +100,11 @@ function convertBlock(blk)
 		end
 	end
 	
-function docGen(world, x2, y2, sblock)
-	posx = tostring(x2)
-	posy = tostring(y2)
+function docGen(world, genx, geny, genblock)
+	posx = tostring(genx)
+	posy = tostring(geny)
 	local w = fs.open(",minecraft/world/"..world.."/"..posx..","..posy, "w")
-	local aBlock = convertBlock(sblock)
+	local aBlock = convertBlock(genblock)
 	w.write(aBlock)
 	w.close()
 	end
